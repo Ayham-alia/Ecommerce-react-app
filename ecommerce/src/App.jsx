@@ -20,6 +20,7 @@ import ForgotPassword from './Component/forgotPassword/ForgotPassword';
 import SendCode from './Component/forgotPassword/SendCode';
 import { CartContext } from './Component/web/cart/Cart';
 import { useQuery } from 'react-query';
+import Order from './Component/web/order/Order';
 
 export default function App() {
 
@@ -68,6 +69,11 @@ export default function App() {
         path: "/cart",
         element:<ProtectedRoute><CartView /></ProtectedRoute> 
       },
+      
+          {
+            path:"order",
+            element:<Order/>
+          },
       {
         path: "/proflie",
         element:<ProtectedRoute><Profile/></ProtectedRoute> ,
@@ -80,7 +86,6 @@ export default function App() {
             path:"contact",
             element:<UserContact/>
           }
-         
         ]
       },
       {

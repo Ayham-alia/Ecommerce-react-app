@@ -2,7 +2,7 @@ import React from 'react'
 import Inputs from '../inputs/Inputs'
 import img from '../../../../public/images/reg.avif'
 import { useFormik } from 'formik'
-import { RegisterSchema } from '../../../../../RegisterValation'
+import { RegisterSchema } from '../validation/RegisterValation'
 import axios from 'axios'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';

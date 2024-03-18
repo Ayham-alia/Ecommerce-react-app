@@ -66,13 +66,12 @@ export function CartContextProvider({children}){
 
     }
     const deleteCartProductContext=async(productId)=>{
-        console.log(productId)
         try{
             const {data}=await axios.patch(`${import.meta.env.VITE_API_URL}/cart/clear`,
             {productId},
             {headers:{Authorization:`Tariq__${token}`}}
             )
-            setCount(--count)
+            setCount(0)
             return data
         }
         catch(e){
@@ -97,15 +96,15 @@ export function CartContextProvider({children}){
             return data
         }
         catch(e){
-            // toast.error(`${e.response.data.message}`, {
-            //     position: "top-center",
-            //     hideProgressBar: false,
-            //     closeOnClick: true,
-            //     pauseOnHover: true,
-            //     draggable: true,
-            //     progress: undefined,
-            //     theme: "light",
-            //     });
+            toast.error(`${e.response.data.message}`, {
+                position: "top-center",
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
+                });
         }
 
     }
