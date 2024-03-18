@@ -3,9 +3,7 @@ import { useParams } from 'react-router-dom'
 import { useQuery } from 'react-query'
 import axios from 'axios'
 import { Container, Row, Col, Image, Button, Form } from 'react-bootstrap';
-import { FaStar } from 'react-icons/fa';
 import Loader from '../../loader/Loader';
-import ReactImageMagnify from 'react-image-magnify';
 import { CartContext } from '../cart/Cart';
 
 
@@ -27,20 +25,10 @@ function Product() {
                 isLoading ? (<Loader />) : (
                     <Container>
                         <Row className='mt-3 mb-4'>
-                            <Col md={6}>
+                            <Col md={6} >
                                 {/* Main product image */}
-                                <ReactImageMagnify {...{
-                                    smallImage: {
-                                        alt: 'Wristwatch by Ted Baker London',
-                                        isFluidWidth: true,
-                                        src: data.mainImage.secure_url
-                                    },
-                                    largeImage: {
-                                        src: data.mainImage.secure_url,
-                                        width: 1200,
-                                        height: 1800
-                                    }
-                                }} />
+                                <img className='' src={data.mainImage.secure_url}/>
+
                             </Col>
                             <Col md={6}>
                                 {/* Product details */}
